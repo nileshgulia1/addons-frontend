@@ -296,13 +296,6 @@ function baseServer(routes, createStore, {
               </Provider>
             </I18nProvider>
           );
-
-          const errorPage = store.getState().errorPage;
-          if (errorPage && errorPage.hasError) {
-            log.info(`Error page was dispatched to state: ${errorPage.error}`);
-            throw errorPage.error;
-          }
-
           const props = { component: InitialComponent };
 
           // We need to render once because it will force components to
